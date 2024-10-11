@@ -13,3 +13,8 @@ A command line application that reads EXIF information from an image file or sid
 - Provide optional command line parameter to output value of a specific metadata tag. 
 - Gracefully handle errors.
 - Provide unit tests. 
+
+## Instructions
+
+### Launching the App
+`python3 main.py`
