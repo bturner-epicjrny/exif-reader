@@ -8,6 +8,7 @@ A command line application that reads EXIF information from an image file or sid
 
 ## Requirements
 - Must accept command line parameter to path of image file.
+- Use `argparse` package to process command line parameters.
 - Use `pyexiv2` package for reading EXIF information. 
 - Must output all available metadata to the screen.
 - Provide optional command line parameter to output value of a specific metadata tag. 
