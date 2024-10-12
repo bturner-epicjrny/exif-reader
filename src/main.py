@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import os
 
 
 def main():
@@ -15,8 +16,25 @@ def main():
   
   args = parser.parse_args()
 
-
   print(f"Processing file: {args.filename}...")
+
+  # Verify provided filename exists in file system.
+  print(f"Provided filename exists in file system: {file_path_valid(args.filename)}")
+  
+
+
+
+def file_path_valid(filename):
+  """Tests if provided provided file exists.
+
+  Args: 
+    filename (string): Path to file.
+
+  Returns: 
+    bool: True if file exists.
+  """
+  is_valid_file = os.path.isfile(filename)
+  return is_valid_file
 
 
 
