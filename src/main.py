@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-import os
+import pyexiv2
 
 
 def main():
@@ -18,23 +18,15 @@ def main():
 
   print(f"Processing file: {args.filename}...")
 
-  # Verify provided filename exists in file system.
-  print(f"Provided filename exists in file system: {file_path_valid(args.filename)}")
-  
+  try:
+    # Attempt to open file using pyexiv2.
+    img = pyexiv2.Image(filename=args.filename)
+  except RuntimeError as e:
+    # Catch error(s).
+    print(f"ERROR: Unable to open file {args.filename}!")
+    print(f"Error details: {e}")
 
 
-
-def file_path_valid(filename):
-  """Tests if provided provided file exists.
-
-  Args: 
-    filename (string): Path to file.
-
-  Returns: 
-    bool: True if file exists.
-  """
-  is_valid_file = os.path.isfile(filename)
-  return is_valid_file
 
 
 
