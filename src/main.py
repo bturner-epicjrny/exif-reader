@@ -21,12 +21,16 @@ def main():
   try:
     # Attempt to open file using pyexiv2.
     img = pyexiv2.Image(filename=args.filename)
+
+    print(f"File type: {img.get_mime_type()}")
+    
+
   except RuntimeError as e:
     # Catch error(s).
     print(f"ERROR: Unable to open file {args.filename}!")
     print(f"Error details: {e}")
 
-
+  
 
 
 
